@@ -1,0 +1,1 @@
+{"tfjsVersion":"1.3.1","tmVersion":"0.8.6","packageVersion":"0.8.6","packageName":"@teachablemachine/pose","timeStamp":"2023-07-11T02:40:00.683Z","userMetadata":{},"modelName":"ring pit","labels":["stand","squat_up","squat_down","legraise_up","legraise_down"],"modelSettings":{"posenet":{"architecture":"MobileNetV1","outputStride":16,"inputResolution":257,"multiplier":0.75}}}
