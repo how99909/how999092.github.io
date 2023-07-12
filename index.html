@@ -120,10 +120,10 @@
             };
 
       document.body.appendChild(script);
-var url = "./my_model/";
-    	let model, webcam, ctx, labelContainer, maxPredictions;
+      var url = "./my_model/";
+      let model, webcam, ctx, labelContainer, maxPredictions;
 
-	async function init() {
+	  async function init() {
         		const modelURL = url + "model.json";
         		const metadataURL = url + "metadata.json";
 
@@ -144,13 +144,13 @@ var url = "./my_model/";
         		for (let i = 0; i < maxPredictions; i++) { // and class labels
             		labelContainer.appendChild(document.createElement("div"));
         		}
-    	}
-	async function loop(timestamp) {
+      }
+	  async function loop(timestamp) {
         		webcam.update(); // update the webcam frame
         		await predict();
         		window.requestAnimationFrame(loop);
-    	}
-	async function predict() {
+      }
+	  async function predict() {
         		const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
         		const prediction = await model.predict(posenetOutput);
 
@@ -161,8 +161,8 @@ var url = "./my_model/";
         		}
 
         		drawPose(pose);
-   	}
-	function drawPose(pose) {
+   	  }
+	  function drawPose(pose) {
         		if (webcam.canvas) {
             			ctx.drawImage(webcam.canvas, 0, 0);
             			if (pose) {
@@ -171,8 +171,8 @@ var url = "./my_model/";
                 				tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
             			}
         		}
-    	}
-	init()
+      }
+	  //init()
     </script>
   </body>
 </html>
