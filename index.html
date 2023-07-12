@@ -135,7 +135,7 @@
         		webcam = new tmPose.Webcam(size, size, flip);
         		await webcam.setup(); // request access to the webcam
         		await webcam.play();
-        		window.requestAnimationFrame(loop);
+        		//window.requestAnimationFrame(loop);
 
         		const canvas = document.getElementById("unity-canvas");
         		canvas.width = size; canvas.height = size;
@@ -172,7 +172,7 @@
             			}
         		}
       }
-	  //init()
+	  init()
     </script>
   </body>
 </html>
