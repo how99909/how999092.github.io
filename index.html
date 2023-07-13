@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
@@ -142,7 +142,8 @@
             		const classPrediction =
                 			prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             		labelContainer.childNodes[i].innerHTML = classPrediction;
-        		}
+        		    transKey(prediction);
+                }
 
         		drawPose(pose);
    	  }
@@ -155,6 +156,20 @@
                 				tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
             			}
         		}
+      }
+      function transKey(prediction){
+                if (prediction[2].probability.toFixed(2)>prediction[1].probability.toFixed(2)){
+                        console.log("True");
+                        simulateKeyPress(' ');
+                }
+      }
+      function simulateKeyPress(key) {
+        var event = new KeyboardEvent('keydown', {
+          key: key,
+          bubbles: true,
+          cancelable: true
+        });
+        document.dispatchEvent(event);
       }
 	  init()
     </script>
